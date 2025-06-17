@@ -40,8 +40,8 @@ const DeveloperFlow = () => {
                                             <Image src={"/images/icon/check-round-pri-icon.svg"} alt="check-icon" width={16} height={16} />
                                             :
                                             <>
-                                            <Image src={"/images/icon/check-round-icon.svg"} alt="check-icon" width={16} height={16} className="block dark:hidden"/>
-                                            <Image src={"/images/icon/dark-check-icon.svg"} alt="check-icon" width={16} height={16} className="hidden dark:block"/>
+                                                <Image src={"/images/icon/check-round-icon.svg"} alt="check-icon" width={16} height={16} className="block dark:hidden" />
+                                                <Image src={"/images/icon/dark-check-icon.svg"} alt="check-icon" width={16} height={16} className="hidden dark:block" />
                                             </>
                                         }
                                         {item}
@@ -50,7 +50,9 @@ const DeveloperFlow = () => {
 
                             </div>
                             <div className="p-6 lg:p-9 border-t border-smokyBlack/10 dark:border-white/10 flex flex-col gap-5">
-                                <Image src={devFlowData?.fastSetup?.feature?.icon} alt="icon" width={32} height={32} />
+                                {devFlowData?.fastSetup?.feature?.icon &&
+                                    <Image src={devFlowData?.fastSetup?.feature?.icon} alt="icon" width={32} height={32} />
+                                }
                                 <div className="flex flex-col gap-3">
                                     <h6 className="font-bold">{devFlowData?.fastSetup?.feature?.title}</h6>
                                     <p className="text-secondary">{devFlowData?.fastSetup?.feature?.description}</p>
@@ -60,7 +62,7 @@ const DeveloperFlow = () => {
                         <div className="flex flex-col sm:flex-row lg:flex-col h-full gap-7">
                             {devFlowData?.features?.map((value: any, index: any) => {
                                 return (
-                                    <div className="h-full w-full border border-smokyBlack/10 dark:border-white/10 rounded-xl p-6 lg:p-9 flex flex-col justify-center gap-5">
+                                    <div key={index} className="h-full w-full border border-smokyBlack/10 dark:border-white/10 rounded-xl p-6 lg:p-9 flex flex-col justify-center gap-5">
                                         <Image src={value?.icon} alt="icon" width={32} height={32} />
                                         <div className="flex flex-col gap-3">
                                             <h6 className="font-bold">{value?.title}</h6>
