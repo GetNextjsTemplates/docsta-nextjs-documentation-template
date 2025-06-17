@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+@theme {
+  --color-primary: #0F7ED9;
+  --color-secondary: #5E696E;
+  --color-smokyBlack: #131516;
+  --color-paleSlate: #F6F8F9;
+
+  --shadow-header_shadow: 0px 8px 8px -4px #13151606;
+
+
+}
+
+@layer utilities {
+  .container {
+    @apply w-full max-w-[76.5rem] mx-auto mt-0 mb-0 py-0 sm:px-7 px-5;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold font-sans;
+  }
+
+  h2 {
+    @apply text-[28px] sm:text-[32px] lg:text-[40px] font-bold;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-[28px];
+  }
+
+  h5 {
+    @apply text-[18px] sm:text-xl lg:text-2xl font-normal;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply text-smokyBlack dark:text-white text-base font-normal;
+  }
+}
