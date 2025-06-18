@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image"
 import { useEffect, useState } from "react";
 import Slider from "react-infinite-logo-slider";
 import SingleSponsor from "./SingleSponsor";

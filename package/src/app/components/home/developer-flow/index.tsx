@@ -26,28 +26,29 @@ const DeveloperFlow = () => {
                 <div className="flex flex-col gap-6 sm:gap-10 items-center justify-center py-12 sm:py-20">
                     <h2 className="text-center">Designed For Developer Flow</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
-                        <div className="border border-smokyBlack/10 dark:border-white/10 rounded-xl">
-                            <div className="flex flex-wrap gap-3 p-6 lg:p-9">
-                                {devFlowData?.fastSetup?.tags.map((item: any, index: any) => (
-                                    <button
-                                        key={index}
-                                        className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-base ${item === "Utility Styling"
-                                            ? "border border-primary text-primary"
-                                            : "bg-paleSlate dark:bg-white/10 text-secondary dark:text-white"
-                                            }`}
-                                    >
-                                        {item === "Utility Styling" ?
-                                            <Image src={"/images/icon/check-round-pri-icon.svg"} alt="check-icon" width={16} height={16} />
-                                            :
-                                            <>
-                                                <Image src={"/images/icon/check-round-icon.svg"} alt="check-icon" width={16} height={16} className="block dark:hidden" />
-                                                <Image src={"/images/icon/dark-check-icon.svg"} alt="check-icon" width={16} height={16} className="hidden dark:block" />
-                                            </>
-                                        }
-                                        {item}
-                                    </button>
-                                ))}
-
+                        <div className="border border-smokyBlack/10 dark:border-white/10 rounded-xl overflow-hidden">
+                            <div className="py-6 lg:py-9 pl-9">
+                                <div className="flex flex-wrap gap-3 min-w-[600px]">
+                                    {devFlowData?.fastSetup?.tags.map((item: any, index: any) => (
+                                        <button
+                                            key={index}
+                                            className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-base ${item === "Utility Styling"
+                                                ? "border border-primary text-primary"
+                                                : "bg-paleSlate dark:bg-white/10 text-secondary dark:text-white"
+                                                }`}
+                                        >
+                                            {item === "Utility Styling" ?
+                                                <Image src={"/images/icon/check-round-pri-icon.svg"} alt="check-icon" width={16} height={16} />
+                                                :
+                                                <>
+                                                    <Image src={"/images/icon/check-round-icon.svg"} alt="check-icon" width={16} height={16} className="block dark:hidden" />
+                                                    <Image src={"/images/icon/dark-check-icon.svg"} alt="check-icon" width={16} height={16} className="hidden dark:block" />
+                                                </>
+                                            }
+                                            {item}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                             <div className="p-6 lg:p-9 border-t border-smokyBlack/10 dark:border-white/10 flex flex-col gap-5">
                                 {devFlowData?.fastSetup?.feature?.icon &&
