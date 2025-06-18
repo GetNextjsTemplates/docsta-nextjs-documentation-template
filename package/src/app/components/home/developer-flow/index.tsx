@@ -21,7 +21,7 @@ const DeveloperFlow = () => {
     }, [])
 
     return (
-        <section className="dark:bg-smokyBlack">
+        <section className="dark:bg-smokyBlack/30">
             <div className="container">
                 <div className="flex flex-col gap-6 sm:gap-10 items-center justify-center py-12 sm:py-20">
                     <h2 className="text-center">Designed For Developer Flow</h2>

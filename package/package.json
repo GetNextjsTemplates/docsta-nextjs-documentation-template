@@ -14,6 +14,7 @@
     "prismjs": "^1.30.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-infinite-logo-slider": "^1.1.4",
     "react-simple-code-editor": "^0.14.1"
   },
   "devDependencies": {

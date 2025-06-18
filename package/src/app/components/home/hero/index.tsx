@@ -41,7 +41,7 @@ const HeroSection = () => {
                                         }
                                     </button>
                                 </div>
-                                <Link href={"/"} className="rounded-full bg-gradient-to-b from-[#419CE6] to-[#0F7ED9] py-3 px-6">
+                                <Link href={"/"} className="btn-gradient py-3 px-6">
                                     <span className="text-white font-bold">Get Started</span>
                                 </Link>
                             </div>

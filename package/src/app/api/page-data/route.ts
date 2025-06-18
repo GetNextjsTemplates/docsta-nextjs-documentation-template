@@ -34,8 +34,54 @@ const developerFlowData = {
   ]
 };
 
+const keyFeatureData = [
+  {
+    icon:"/images/key-feature/key-icon-1.svg",
+    title:"Dark Mode Included",
+    descp:"Automatically detects system preference and provides a toggle for seamless light and dark theme switching."
+  },
+  {
+    icon:"/images/key-feature/key-icon-2.svg",
+    title:"SEO Ready",
+    descp:"Includes meta tags, sitemap, and Open Graph settings to help your docs rank and preview well."
+  },
+  {
+    icon:"/images/key-feature/key-icon-3.svg",
+    title:"Instant Deploy",
+    descp:"Deploy instantly with Vercel or Netlify, or export static files for traditional hosting without hassle."
+  },
+  {
+    icon:"/images/key-feature/key-icon-4.svg",
+    title:"Custom 404 Page",
+    descp:"Prebuilt 404 page matches your site’s style, ensuring consistent experience even on broken links."
+  },
+  {
+    icon:"/images/key-feature/key-icon-5.svg",
+    title:"Versioned Docs",
+    descp:"Supports multiple versions so users can easily switch between releases and find relevant information fast."
+  },
+  {
+    icon:"/images/key-feature/key-icon-6.svg",
+    title:"MIT Licensed",
+    descp:"Fully open-source and MIT licensed—use, modify, and distribute freely for personal or commercial projects."
+  },
+]
+
+const sponsorData = [
+  "/images/sponsor/sponsor-icon-1.svg",
+  "/images/sponsor/sponsor-icon-2.svg",
+  "/images/sponsor/sponsor-icon-3.svg",
+  "/images/sponsor/sponsor-icon-4.svg",
+  "/images/sponsor/sponsor-icon-5.svg",
+  "/images/sponsor/sponsor-icon-6.svg",
+  "/images/sponsor/sponsor-icon-7.svg",
+]
+
+
 export const GET = async () => {
   return NextResponse.json({
     developerFlowData,
+    keyFeatureData,
+    sponsorData
   });
 };
