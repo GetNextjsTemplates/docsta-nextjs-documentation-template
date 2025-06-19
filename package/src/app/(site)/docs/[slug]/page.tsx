@@ -2,11 +2,14 @@ import { sanity } from '@/lib/sanity'
 import { getDocBySlugQuery } from '@/lib/sanityQueries'
 import { PortableText } from '@portabletext/react'
 
-export default async function DocPage({ params }: { params: { slug: string } }) {
-  const doc = await sanity.fetch(getDocBySlugQuery(params.slug))
+type Props = {
+  params: {
+    slug: string;
+  }
+}
 
-  console.log("doc",doc);
-  
+export default async function DocPage({ params }: any) {
+  const doc = await sanity.fetch(getDocBySlugQuery(params.slug))
 
   if (!doc) return <div>Not found</div>
 
@@ -20,5 +23,7 @@ export default async function DocPage({ params }: { params: { slug: string } }) 
 
 export async function generateStaticParams() {
   const docs = await sanity.fetch(`*[_type == "doc"]{ "slug": slug.current }`)
-  return docs.map((doc: any) => ({ slug: doc.slug }))
+  return docs.map((doc: any) => ({
+    slug: doc.slug
+  }))
 }
