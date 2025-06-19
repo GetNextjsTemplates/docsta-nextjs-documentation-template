@@ -1,3 +1,3 @@
-import docPage from "./docPage";
+import doc from "./doc";
 
-export const schemaTypes = [docPage]
+export const schemaTypes = [doc]

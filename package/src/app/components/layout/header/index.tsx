@@ -25,7 +25,7 @@ const Header = () => {
                         </button>
 
                         <div className="hidden sm:flex gap-6">
-                            <Link href={"/"}>
+                            <Link href={"/docs/intro"}>
                                 <p className="hover:text-primary">
                                     Docs
                                 </p>
