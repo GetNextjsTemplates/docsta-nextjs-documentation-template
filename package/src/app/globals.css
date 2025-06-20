@@ -38,6 +38,26 @@ body {
   .btn-gradient {
     @apply rounded-full bg-gradient-to-b from-[#419CE6] to-[#0F7ED9] hover:bg-gradient-to-t hover:from-[#419CE6] hover:to-[#0F7ED9];
   }
+
+  .docs-content p{
+    @apply text-smokyBlack mb-3.5 mt-2;
+  }
+
+  .docs-content h3{
+    @apply text-smokyBlack font-bold mb-6 mt-8;
+  }
+
+  .docs-content h5{
+    @apply text-smokyBlack font-bold mb-4 mt-9;
+  }
+
+  .docs-content h6{
+    @apply text-smokyBlack font-bold mb-4 mt-9;
+  }
+
+  code{
+    @apply bg-paleSlate py-1 px-2.5 rounded-xl border border-smokyBlack/10;
+  }
 }
 
 @layer base {

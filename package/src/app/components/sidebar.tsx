@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { sanity } from '@/lib/sanity'
 import { getAllDocsQuery } from '@/lib/sanityQueries'
+import { usePathname } from 'next/navigation'
 
 export default function Sidebar() {
+  const pathname = usePathname()
   const [docs, setDocs] = useState([])
 
   useEffect(() => {
@@ -23,16 +25,17 @@ export default function Sidebar() {
   }, {})
 
   return (
-    <div>
+    <div className='flex flex-col gap-4'>
       {Object.entries(grouped).map(([category, pages]: any) => (
-        <div key={category} className="mb-4">
-          <h3 className="text-lg font-semibold mb-2">{category}</h3>
-          <ul className="space-y-1">
+        <div key={category} className="pb-4 border-b border-smokyBlack/10 last:border-b-0">
+          <p className="text-sm font-medium uppercase text-secondary mb-3">{category}</p>
+          <ul className="border-l border-smokyBlack/10">
             {pages.map((page: any) => (
-              <li key={page._id}>
+              <li key={page._id} className={`py-1 px-4 ${pathname === `/docs/${page.slug.current}` ?  'border-l border-smokyBlack' :  ''}`}>
                 <Link
                   href={`/docs/${page.slug.current}`}
-                  className="text-sm text-blue-600 hover:underline"
+                  className={`text-base hover:text-smokyBlack ${pathname === `/docs/${page.slug.current}` ? 'text-smokyBlack font-bold' : 'text-secondary font-normal'
+                    }`}
                 >
                   {page.title}
                 </Link>
