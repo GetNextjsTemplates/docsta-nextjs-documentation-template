@@ -4,7 +4,8 @@ export const getAllDocsQuery = `
     title,
     slug,
     category,
-    order
+    order,
+    content
   }
 `
 

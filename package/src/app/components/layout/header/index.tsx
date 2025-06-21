@@ -5,9 +5,16 @@ import Link from "next/link"
 import ThemeToggler from "./ThemeToggler"
 import MobileSidebar from "./MobileSidebar"
 import { useState } from "react"
+import { usePathname } from "next/navigation";
+import SearchModal from "./SearchModal";
 
 const Header = () => {
+    const pathname = usePathname();
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const isDocsPage = /^\/docs\/[^/]+$/.test(pathname);
+
     return (
         <header className="fixed top-0 z-50 w-full">
             <nav className="bg-white dark:bg-smokyBlack px-4 sm:px-8 py-4 sm:py-5 border-b border-smokyBlack/10 dark:border-white/10 shadow-header_shadow">
@@ -15,7 +22,7 @@ const Header = () => {
                     <Logo />
 
                     <div className="flex items-center gap-3.5 sm:gap-5 lg:gap-7">
-                        <button className="hidden md:flex items-center gap-2.5 bg-paleSlate dark:bg-white/95 px-2 py-1.5 rounded-xl border border-smokyBlack/10 transition">
+                        <button className="hidden md:flex items-center gap-2.5 bg-paleSlate dark:bg-white/95 px-2 py-1.5 rounded-xl border border-smokyBlack/10 transition cursor-pointer hover:shadow-sm" onClick={() => setModalOpen(true)}>
                             <Image src={"/images/icon/search-icon.svg"} alt="search-icon" width={20} height={20} />
                             <span className="text-smokyBlack">Search</span>
                             <span className="ml-2 flex gap-1 items-center">
@@ -24,15 +31,12 @@ const Header = () => {
                             </span>
                         </button>
 
+                        <SearchModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
                         <div className="hidden sm:flex gap-6">
                             <Link href={"/docs/intro"}>
                                 <p className="hover:text-primary">
                                     Docs
-                                </p>
-                            </Link>
-                            <Link href={"/"}>
-                                <p className="hover:text-primary">
-                                    Resources
                                 </p>
                             </Link>
                         </div>
@@ -47,12 +51,14 @@ const Header = () => {
                         </Link>
                         <ThemeToggler />
 
-                        <button className="flex sm:hidden cursor-pointer" onClick={() => setSidebarOpen(!sidebarOpen)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><rect width="18" height="1.5" x="3" y="7.001" fill="currentcolor" rx=".75" />
-                                <rect width="15" height="1.5" x="3" y="11.251" fill="currentcolor" rx=".75" />
-                                <rect width="18" height="1.5" x="3" y="15.499" fill="currentcolor" rx=".75" />
-                            </svg>
-                        </button>
+                        {isDocsPage &&
+                            <button className="flex md:hidden cursor-pointer" onClick={() => setSidebarOpen(!sidebarOpen)}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><rect width="18" height="1.5" x="3" y="7.001" fill="currentcolor" rx=".75" />
+                                    <rect width="15" height="1.5" x="3" y="11.251" fill="currentcolor" rx=".75" />
+                                    <rect width="18" height="1.5" x="3" y="15.499" fill="currentcolor" rx=".75" />
+                                </svg>
+                            </button>
+                        }
                     </div>
                 </div>
             </nav>

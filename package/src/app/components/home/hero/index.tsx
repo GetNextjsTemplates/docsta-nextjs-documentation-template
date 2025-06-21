@@ -41,7 +41,7 @@ const HeroSection = () => {
                                         }
                                     </button>
                                 </div>
-                                <Link href={"/"} className="btn-gradient py-3 px-6">
+                                <Link href={"/docs/intro"} className="btn-gradient py-3 px-6">
                                     <span className="text-white font-bold">Get Started</span>
                                 </Link>
                             </div>

@@ -1,13 +1,17 @@
 import Sidebar from "@/app/components/sidebar";
 
-
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex pt-20">
-      <div className="w-72 border-r border-smokyBlack/10 p-6">
+    <div className="h-screen flex pt-[53px] overflow-hidden dark:bg-smokyBlack/10">
+      
+      <aside className="hidden md:flex max-w-72 w-full border-r border-smokyBlack/10 sticky top-[80px] h-[calc(100vh-80px)] overflow-y-auto p-6">
         <Sidebar />
-      </div>
-      <main className="flex-1 py-20 px-40">{children}</main>
+      </aside>
+
+      <main className="w-full overflow-y-auto">
+        {children}
+      </main>
+
     </div>
-  )
+  );
 }

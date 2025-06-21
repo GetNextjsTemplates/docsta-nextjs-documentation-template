@@ -3,6 +3,7 @@ import { sanity } from '@/lib/sanity'
 import { getDocBySlugQuery } from '@/lib/sanityQueries'
 import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
+import Link from 'next/link'
 // @ts-ignore
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 // @ts-ignore
@@ -14,24 +15,26 @@ export default async function DocPage({ params }: any) {
   if (!doc) return <div>Not found</div>
 
   const headings = doc.content
-    .filter((block: any) => block._type === 'block' && [ 'h5', 'h4'].includes(block.style))
+    .filter((block: any) => block._type === 'block' && ['h5', 'h4'].includes(block.style))
     .map((block: any) => ({
       text: block.children.map((c: any) => c.text).join(''),
       id: block._key,
       level: block.style,
     }))
 
-  console.log("HEadinggnggng", headings);
+
+    console.log("headinggnggngn",headings);
+    
 
 
   const components = {
     types: {
       cardGrid: ({ value }: any) => (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pb-6 my-6 border-b border-smokyBlack/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-6 my-6 border-b border-smokyBlack/10">
           {value.cards.map((card: any, index: number) => (
             <div
               key={index}
-              className="border border-smokyBlack/10 rounded-xl p-5"
+              className="border border-smokyBlack/10 dark:border-white/10 rounded-xl p-5"
             >
               {card.icon?.asset && (
                 <Image
@@ -91,10 +94,10 @@ export default async function DocPage({ params }: any) {
 
     list: {
       bullet: ({ children }: any) => (
-        <ul className="list-disc pl-5 pt-4 space-y-2 text-smokyBlack">{children}</ul>
+        <ul className="list-disc pl-5 space-y-2 text-smokyBlack dark:text-white">{children}</ul>
       ),
       number: ({ children }: any) => (
-        <ol className="list-decimal pl-5 space-y-2 text-smokyBlack">{children}</ol>
+        <ol className="list-decimal pl-5 space-y-2 text-smokyBlack dark:text-white">{children}</ol>
       ),
     },
 
@@ -106,56 +109,61 @@ export default async function DocPage({ params }: any) {
 
 
   return (
-    <div className="flex items-start ">
-      <div className="max-w-3xl mx-auto px-4">
-        <div className="docs-content">
-          <h1 className="text-4xl text-smokyBlack mb-6">{doc.title}</h1>
-          <PortableText value={doc.content} components={components} />
-        </div>
+    <div className="container">
+      <div className="flex items-start py-11 sm:py-20">
 
-        <div className="flex flex-col gap-3 py-6 mt-6 border-t border-smokyBlack/10">
-          <p className="text-smokyBlack font-semibold">
-            What did you think of this content?
-          </p>
-          <div className="flex gap-8">
-            {[
-              { icon: 'like-icon', label: 'It was helpful' },
-              { icon: 'dislike-icon', label: 'It was not helpful' },
-              { icon: 'feedback-icon', label: 'I have a feedback' },
-            ].map(({ icon, label }) => (
-              <div className="flex items-center gap-2" key={icon}>
-                <Image
-                  src={`/images/doc-intro/${icon}.svg`}
-                  alt={icon}
-                  width={20}
-                  height={20}
-                />
-                <p>{label}</p>
-              </div>
-            ))}
+        <div className="flex-grow min-w-0">
+          <div className="docs-content max-w-3xl">
+            <h1 className="text-3xl md:text-4xl text-smokyBlack dark:text-white mb-6">{doc.title}</h1>
+            <PortableText value={doc.content} components={components} />
+          </div>
+
+          <div className="flex flex-col gap-4 py-6 mt-6 border-t border-smokyBlack/10 dark:border-white/10">
+            <p className="text-smokyBlack dark:text-white font-semibold">
+              What did you think of this content?
+            </p>
+            <div className="flex flex-wrap gap-y-2 gap-x-5">
+              {[
+                { icon: 'like-icon', label: 'It was helpful' },
+                { icon: 'dislike-icon', label: 'It was not helpful' },
+                { icon: 'feedback-icon', label: 'I have a feedback' },
+              ].map(({ icon, label }) => (
+                <div className="flex items-center gap-2" key={icon}>
+                  <Image
+                    src={`/images/doc-intro/${icon}.svg`}
+                    alt={icon}
+                    width={20}
+                    height={20}
+                  />
+                  <p>{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <aside className="w-64 sticky top-24 h-fit hidden md:block text-sm">
-        <p className="uppercase font-semibold mb-4 text-sm text-secondary">On this page</p>
-        <ul className="border-l border-smokyBlack/10">
-          {headings.map(({ id, text, level }: any) => {
-            console.log(text);
-            
-            return (
-              <li key={id} className="py-1 px-3">
-                <a
-                  href={`#${id}`}
-                  className="block hover:text-black text-sm font-normal text-secondary"
-                >
-                  {text}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
-      </aside>
+        {headings && headings.length != 0 &&
+          <aside className="w-[240px] flex-shrink-0 sticky top-10 h-fit hidden lg:block text-sm pl-10">
+            <p className="uppercase font-semibold mb-4 text-sm text-secondary dark:text-white/80">
+              On this page
+            </p>
+            <ul className="border-l border-smokyBlack/10 dark:border-white/10">
+              {headings.map(({ id, text, level }: any) => (
+                <li key={id} className="py-1 px-3">
+                  <Link
+                    href={`#${id}`}
+                    className="block hover:text-black dark:hover:text-white text-sm font-normal text-secondary dark:text-white/60"
+                  >
+                    {text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        }
+
+      </div>
     </div>
+
   )
 }

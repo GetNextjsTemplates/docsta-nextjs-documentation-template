@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Sidebar from "../../sidebar";
 
 type MobileSidebarProps = {
     isOpen: boolean;
@@ -16,10 +17,10 @@ const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
                 />
             )}
             <div
-                className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-baseInk shadow-lg transform transition-transform duration-300 max-w-xs ${isOpen ? 'translate-x-0' : 'translate-x-full'
+                className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-smokyBlack shadow-lg transform transition-transform duration-300 max-w-xs ${isOpen ? 'translate-x-0' : 'translate-x-full'
                     } z-50`}
             >
-                <div className='flex items-center justify-between p-4'>
+                <div className='flex items-center justify-between p-4 shadow-xl'>
                     <h6 className='font-bold'>Menu</h6>
                     <button
                         className="cursor-pointer"
@@ -37,15 +38,8 @@ const MobileSidebar = ({ isOpen, onClose }: MobileSidebarProps) => {
                         </svg>
                     </button>
                 </div>
-                <div className='p-4'>
-                    <ul className='flex flex-col gap-2'>
-                        <li className="hover:text-primary">
-                            <Link href={"/"}>Docs</Link>
-                        </li>
-                        <li className="hover:text-primary">
-                            <Link href={"/"}>Resources</Link>
-                        </li>
-                    </ul>
+                <div className='px-4 py-6 overflow-auto h-[calc(100%-50px)]'>
+                    <Sidebar onLinkClick={onClose}/>
                 </div>
             </div>
         </>

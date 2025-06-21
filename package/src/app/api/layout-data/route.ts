@@ -10,10 +10,6 @@ const footerLink = [
         link: "/"
     },
     {
-        title: "Twitter",
-        link: "/"
-    },
-    {
         title: "License",
         link: "/"
     }
