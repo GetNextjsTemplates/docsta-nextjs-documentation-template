@@ -23,7 +23,7 @@ const Header = () => {
 
                     <div className="flex items-center gap-3.5 sm:gap-5 lg:gap-7">
                         <button className="hidden md:flex w-40 items-center gap-2.5 bg-paleSlate dark:bg-[#353535] px-2 py-1.5 rounded-xl border border-smokyBlack/10 dark:border-white/10 transition cursor-pointer hover:shadow-sm" onClick={() => setModalOpen(true)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6" /></svg>
                             <span className="text-smokyBlack dark:text-white">Search</span>
                         </button>
 
