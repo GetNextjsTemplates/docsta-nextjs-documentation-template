@@ -13,10 +13,10 @@ const NotFound = () => {
       <div className="py-20">
         <div className="container">
           <div className="flex flex-col items-center justify-center gap-8 mt-20">
-            <div className="w-full h-[600px]">
+            <div className="w-full h-[400px] sm:h-[500px]">
               <Image src={"/images/not-found/notFound.svg"} alt="notfound" width={400} height={500} className="w-full h-full object-contain" />
             </div>
-            <div className="flex flex-col gap-4 items-center max-w-xl">
+            <div className="flex flex-col gap-4 items-center text-center max-w-xl">
               <h3 className="font-medium">Sorry! The page not found</h3>
               <Link href={"/"}>
                 <div className="btn-gradient py-3 px-6 w-fit">

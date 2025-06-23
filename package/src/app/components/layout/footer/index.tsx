@@ -25,7 +25,8 @@ const Footer = () => {
             <div className="bg-paleSlate dark:bg-smokyBlack/40 py-6 sm:py-10">
                 <div className="container">
                     <div className="flex flex-col sm:flex-row gap-2 items-center justify-between text-center sm:text-left">
-                        <p>© 2025 <Link href={"/"} className="underline hover:text-primary">Docsta</Link>. All rights reserved</p>
+                        <p>© <Link href={"/"} className="hover:text-primary">Docsta</Link>. All rights reserved Created by
+                            <Link href={"/https://getnextjstemplates.com/"} className="hover:text-primary"> Getnextjstemplates.com</Link></p>
                         <div className="flex flex-wrap items-center row-gap-2 gap-x-5 justify-center">
                             {footerLink?.map((value: any, index: any) => {
                                 return (
