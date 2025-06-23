@@ -47,7 +47,12 @@ const Header = () => {
                         <Link href={"/"} className="group flex items-center gap-2.5">
                             <Image src={"/images/icon/github-icon.svg"} alt="github-icon" width={24} height={24} className="dark:hidden block" />
                             <Image src={"/images/icon/github-white.svg"} alt="github-icon" width={24} height={24} className="dark:block hidden" />
-                            <p className="hidden md:flex group-hover:text-primary ">4.253 stars</p>
+                            <iframe
+                                src={`https://ghbtns.com/github-btn.html?user=GetNextjsTemplates&repo=docsta&type=star&count=true`}
+                                width="50"
+                                height="20"
+                                title="GitHub"
+                            ></iframe>
                         </Link>
                         <ThemeToggler />
 
