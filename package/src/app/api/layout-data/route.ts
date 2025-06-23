@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 const footerLink = [
     {
         title: "Docs",
-        link: "/documentation"
+        link: "/docs/intro"
     },
     {
         title: "Github",
@@ -11,7 +11,7 @@ const footerLink = [
     },
     {
         title: "License",
-        link: "/"
+        link: "/license"
     }
 ]
 

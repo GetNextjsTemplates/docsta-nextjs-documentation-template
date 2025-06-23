@@ -12,28 +12,34 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
     const modalRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        let handleClickOutside: (event: MouseEvent) => void;
+
         const fetchDocs = async () => {
             const res = await sanity.fetch(getAllDocsQuery);
             setDocs(res);
         };
-        fetchDocs();
-    }, []);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-                onClose();
-            }
-        };
 
         if (isOpen) {
+            fetchDocs();
+
+            handleClickOutside = (event: MouseEvent) => {
+                if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+                    onClose();
+                }
+            };
+
             document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            setSearch('');
         }
 
         return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
+            if (handleClickOutside) {
+                document.removeEventListener('mousedown', handleClickOutside);
+            }
         };
     }, [isOpen, onClose]);
+
 
     if (!isOpen) return null;
 
@@ -88,6 +94,7 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
                             <div
                                 key={index}
                                 className="flex flex-col gap-3 px-3 py-4 sm:p-5 border-t border-smokyBlack/10 hover:bg-primary/10"
+                                onClick={onClose}
                             >
                                 <div className="flex items-center justify-between gap-3 ">
                                     <div className="flex items-center gap-3">

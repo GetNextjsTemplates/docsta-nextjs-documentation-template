@@ -2,6 +2,7 @@
 import Image from "next/image"
 import Link from "next/link";
 import { useState } from "react";
+import { BackgroundBeams } from "../../ui/BackgroundBeams";
 
 const HeroSection = () => {
     const [copied, setCopied] = useState(false);
@@ -16,8 +17,9 @@ const HeroSection = () => {
     return (
 
         <section>
-            <div className="bg-[radial-gradient(46.36%_160.26%_at_51.22%_81.69%,rgba(15,126,217,0.06)_0%,rgba(15,126,217,0)_100%),radial-gradient(18.4%_45.73%_at_11.57%_64.01%,rgba(217,15,15,0.05)_0%,rgba(217,15,15,0)_100%),radial-gradient(19.91%_49.47%_at_100.75%_35.35%,rgba(123,236,170,0.1)_0%,rgba(123,236,170,0)_100%)] pt-20">
-                <div className="bg-[url(/images/banner/banner-bg.png)] bg-no-repeat bg-center">
+
+            <div className="relative bg-[radial-gradient(46.36%_160.26%_at_51.22%_81.69%,rgba(15,126,217,0.06)_0%,rgba(15,126,217,0)_100%),radial-gradient(18.4%_45.73%_at_11.57%_64.01%,rgba(217,15,15,0.05)_0%,rgba(217,15,15,0)_100%),radial-gradient(19.91%_49.47%_at_100.75%_35.35%,rgba(123,236,170,0.1)_0%,rgba(123,236,170,0)_100%)] pt-20">
+                <div>
                     <div className="container">
                         <div className="flex flex-col gap-2 sm:gap-4 text-center items-center justify-center py-12 sm:py-20">
                             <div className="pb-4">
@@ -54,6 +56,7 @@ const HeroSection = () => {
                         </div>
                     </div>
                 </div>
+                <BackgroundBeams />
             </div>
         </section>
     )

@@ -47,14 +47,9 @@ const Sponsors = () => {
                         <div className="w-full flex justify-center">
                         <div className="flex flex-col items-center gap-2.5 max-w-xl">
                             <p>Support Docsta on <Link href={"/"} className="text-primary hover:border-b hover:border-primary">Open Collective</Link> or <Link href={"/"} className="text-primary hover:border-b hover:border-primary">Patreon</Link> and help us to make it even better! Your support means a lot for us!</p>
-                            <Link href={"/"}>
+                            <Link href={"/docs/installation"}>
                                 <div className="btn-gradient py-3 px-6 w-fit">
-                                    <p className="text-white font-bold">Become a sponsor on OpenCollective</p>
-                                </div>
-                            </Link>
-                            <Link href={"/"}>
-                                <div className="btn-gradient py-3 px-6 w-fit">
-                                    <p className="text-white font-bold">Support Docsta on Patreon</p>
+                                    <p className="text-white font-bold">Checkout Docs</p>
                                 </div>
                             </Link>
                         </div>

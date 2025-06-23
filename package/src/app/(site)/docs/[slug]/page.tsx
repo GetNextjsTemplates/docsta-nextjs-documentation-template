@@ -2,17 +2,25 @@ import { urlFor } from '@/lib/imageUrl'
 import { sanity } from '@/lib/sanity'
 import { getDocBySlugQuery } from '@/lib/sanityQueries'
 import { PortableText } from '@portabletext/react'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 // @ts-ignore
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 // @ts-ignore
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
+
+export const metadata: Metadata = {
+    title: "Documentation | Docstra",
+};
+
+
 export default async function DocPage({ params }: any) {
   const doc = await sanity.fetch(getDocBySlugQuery(params?.slug))
 
-  if (!doc) return <div>Not found</div>
+  if (!doc) return notFound()
 
   const headings = doc.content
     .filter((block: any) => block._type === 'block' && ['h5', 'h4'].includes(block.style))
@@ -21,11 +29,6 @@ export default async function DocPage({ params }: any) {
       id: block._key,
       level: block.style,
     }))
-
-
-    console.log("headinggnggngn",headings);
-    
-
 
   const components = {
     types: {
