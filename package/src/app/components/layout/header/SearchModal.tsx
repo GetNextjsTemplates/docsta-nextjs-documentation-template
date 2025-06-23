@@ -51,12 +51,7 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
             >
                 <div className="relative flex items-center w-full rounded-t-lg gap-4 px-3 py-4 sm:p-5 bg-white dark:bg-smokyBlack focus-within:border-primary/60 dark:focus-within:border-primary/60 shadow-xs">
                     <div className="mr-2">
-                        <Image
-                            src="/images/icon/search-icon.svg"
-                            alt="search-icon"
-                            width={18}
-                            height={18}
-                        />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6" /></svg>
                     </div>
                     <input
                         type="text"
