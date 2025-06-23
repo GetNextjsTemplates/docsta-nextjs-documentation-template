@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link";
 import { useState } from "react";
 import { BackgroundBeams } from "../../ui/BackgroundBeams";
+import { TextGenerateEffect } from "../../ui/text-generate-effect";
 
 const HeroSection = () => {
     const [copied, setCopied] = useState(false);
@@ -14,6 +15,8 @@ const HeroSection = () => {
             setTimeout(() => setCopied(false), 2000);
         });
     };
+
+    const words = `Docsta is a modern, minimal, and highly customizable documentation starter template for open-source projects, tools, or libraries.`;
     return (
 
         <section>
@@ -26,7 +29,8 @@ const HeroSection = () => {
                                 <Image src={"/images/banner/banner-logo.svg"} alt="banner-logo" width={120} height={120} />
                             </div>
                             <h1>Launch Docs. Fast. Beautiful. Focused.</h1>
-                            <h5 className="text-secondary max-w-3xl">Docsta is a modern, minimal, and highly customizable documentation starter template for open-source projects, tools, or libraries.</h5>
+                            <TextGenerateEffect words={words} />
+                            {/* <h5 className="text-secondary max-w-3xl">Docsta is a modern, minimal, and highly customizable documentation starter template for open-source projects, tools, or libraries.</h5> */}
                             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 py-3">
                                 <div className="flex items-center gap-2.5 bg-primary/10 border border-primary rounded-xl px-4 py-2">
                                     <p className="text-secondary">$</p>

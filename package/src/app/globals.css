@@ -2,9 +2,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-html {
+html,
+main {
   scroll-behavior: smooth;
 }
+
 
 body {
   margin: 0;
@@ -39,25 +41,31 @@ body {
     @apply rounded-full bg-gradient-to-b from-[#419CE6] to-[#0F7ED9] hover:bg-gradient-to-t hover:from-[#419CE6] hover:to-[#0F7ED9];
   }
 
-  
-
-  .docs-content h3{
+  .docs-content h1 {
     @apply text-smokyBlack dark:text-white font-bold mb-6 mt-8;
   }
 
-  .docs-content h5{
+  .docs-content h2 {
+    @apply text-smokyBlack dark:text-white font-bold mb-6 mt-8;
+  }
+
+  .docs-content h3 {
+    @apply text-smokyBlack dark:text-white font-bold mb-6 mt-8;
+  }
+
+  .docs-content h5 {
     @apply text-smokyBlack dark:text-white font-bold mb-4 mt-4 sm:mt-9;
   }
 
-  .docs-content h6{
+  .docs-content h6 {
     @apply text-smokyBlack dark:text-white font-bold mb-4 mt-9;
   }
 
-  .docs-content p{
+  .docs-content p {
     @apply text-smokyBlack dark:text-white/70 mb-3.5 mt-2;
   }
 
-  code{
+  code {
     @apply bg-paleSlate dark:bg-charcoalDark py-0.5 px-1.5 rounded-xl border border-smokyBlack/10;
   }
 }
