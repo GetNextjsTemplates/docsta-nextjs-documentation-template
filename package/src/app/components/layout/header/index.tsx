@@ -41,7 +41,7 @@ const Header = () => {
                             </Link>
                         </div>
 
-                        <button className="flex md:hidden bg-paleSlate dark:bg-white/95 p-1 sm:p-1.5 border border-smokyBlack/10 rounded-full cursor-pointer">
+                        <button className="flex md:hidden bg-paleSlate dark:bg-white/95 p-1 sm:p-1.5 border border-smokyBlack/10 rounded-full cursor-pointer" onClick={() => setModalOpen(true)}>
                             <Image src={"/images/icon/search-icon.svg"} alt="search-icon" width={18} height={18} />
                         </button>
                         <Link href={"/"} className="group flex items-center gap-2.5">
