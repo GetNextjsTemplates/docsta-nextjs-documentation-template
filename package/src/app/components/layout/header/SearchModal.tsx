@@ -47,9 +47,9 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
         <div className="fixed inset-0 bg-black/50 flex justify-center items-start pt-30 z-50">
             <div
                 ref={modalRef}
-                className="relative bg-white w-full max-w-xl rounded-lg shadow-lg m-5"
+                className="relative bg-white dark:bg-smokyBlack w-full max-w-xl rounded-lg shadow-lg m-5"
             >
-                <div className="relative flex items-center w-full rounded-t-lg gap-4 px-3 py-4 sm:p-5 bg-white focus-within:border-primary/60 shadow-xs">
+                <div className="relative flex items-center w-full rounded-t-lg gap-4 px-3 py-4 sm:p-5 bg-white dark:bg-smokyBlack focus-within:border-primary/60 dark:focus-within:border-primary/60 shadow-xs">
                     <div className="mr-2">
                         <Image
                             src="/images/icon/search-icon.svg"
@@ -93,7 +93,7 @@ export default function SearchModal({ isOpen, onClose }: { isOpen: boolean; onCl
                         return filteredDocs.slice(0, 10).map((value: any, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col gap-3 px-3 py-4 sm:p-5 border-t border-smokyBlack/10 hover:bg-primary/10"
+                                className="flex flex-col gap-3 px-3 py-4 sm:p-5 border-t border-smokyBlack/10 dark:border-white/10 hover:bg-primary/10"
                                 onClick={onClose}
                             >
                                 <div className="flex items-center justify-between gap-3 ">
