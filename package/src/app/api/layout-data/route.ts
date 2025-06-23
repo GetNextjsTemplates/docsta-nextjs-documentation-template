@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 
 const footerLink = [
     {
-        title: "Docs",
-        link: "/docs/intro"
+        title: "Project Docs",
+        link: "/project-documentation"
     },
     {
         title: "Github",
