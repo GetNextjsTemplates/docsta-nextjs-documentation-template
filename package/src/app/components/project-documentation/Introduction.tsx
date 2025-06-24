@@ -26,9 +26,9 @@ export const Introduction = () => {
     },
     {
       id: "4",
-      packageName: "NextAuth",
-      img: "/images/documentation/nextauth.png",
-      version: "2.49.4",
+      packageName: "Aceternity",
+      img: "/images/documentation/acernity-logo.png",
+      version: "4+",
     },
     {
       id: "5",
