@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'docstra-docs',
 
-  projectId: 'wqz7p0wf',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
