@@ -25,5 +25,4 @@
 # Typescript
 *.tsbuildinfo
 
-# Dotenv and similar local-only files
-*.local
+
