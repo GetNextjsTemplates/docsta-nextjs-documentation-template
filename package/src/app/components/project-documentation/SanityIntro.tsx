@@ -59,7 +59,7 @@ const SanityIntro = () => {
                                 <p className="text-xl text-secondary dark:text-white" >|—</p>
                                 <span className="font-medium text-secondary dark:text-white">
                                     <Image src={"/images/icon/folder-icon.svg"} alt="folder-icon" width={16} height={16} className="text-primary text-base inline-block me-2" />
-                                    studio/
+                                    docstra-docs/
                                 </span>
                             </div>
                             <div className="flex">
@@ -116,7 +116,7 @@ const SanityIntro = () => {
                     <p className="text-sm text-white/70">SANITY_STUDIO_DATASET=your_dataset_name</p>
                 </div>
 
-                <p className="dark:text-white text-dark font-medium text-base mt-3">In your frontend project folder (e.g., frontend/), rename .env.local file at the root level named as .env and set environment variable.</p>
+                <p className="dark:text-white text-dark font-medium text-base mt-3">In your package project folder (e.g., package/), rename .env.local file at the root level named as .env and set environment variable.</p>
                 <div className="py-4 px-3 rounded-md bg-black mt-3">
                     <p className="text-sm text-white/70 mb-3">NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id</p>
                     <p className="text-sm text-white/70">NEXT_PUBLIC_SANITY_DATASET=your_dataset_name</p>

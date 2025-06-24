@@ -82,7 +82,7 @@ export const Introduction = () => {
         </div>
         <div className="mt-5">
           <p className="text-base font-medium text-secondary dark:text-white">
-            BlogForge Tailwind NextJs Template is built with Tailwindcss and
+            Docstra Tailwind NextJs Template is built with Tailwindcss and
             Nextjs.
           </p>
           <p className="text-base font-medium text-secondary dark:text-white">
@@ -90,7 +90,7 @@ export const Introduction = () => {
             your requirement.
           </p>
           <p className="text-base font-medium text-secondary dark:text-white">
-            For Customize, You should have knowledge of NextJs, ReactJs,
+            For Customize, You should have knowledge of NextJs, sanity.io, ReactJs,
             Tailwind and JSX to be able to modify these template.
           </p>
         </div>

@@ -23,7 +23,7 @@ export const QuickStart = () => {
       <div className="p-6 rounded-md border mt-6 border-smokyBlack/10 dark:border-white/20">
         <h6 className="dark:text-white text-lg font-medium">2. Install</h6>
         <p className="text-base font-medium text-secondary dark:text-white">
-          Open frontend folder and install its dependencies. We recommanded yarn
+          Open package folder and install its dependencies. We recommanded yarn
           or npm.{" "}
         </p>
         <h6 className="mt-4 mb-2 dark:text-white text-dark font-medium text-base">
@@ -31,7 +31,7 @@ export const QuickStart = () => {
         </h6>
         <div className="py-4 px-3 rounded-md bg-black">
           <p className="text-sm text-white/70">
-            <span className="text-yellow-500">cd</span> frontend
+            <span className="text-yellow-500">cd</span> package
           </p>
           <p className="text-sm text-white/70 mt-2">npm install</p>
         </div>
@@ -40,7 +40,7 @@ export const QuickStart = () => {
         </h6>
         <div className="py-4 px-3 rounded-md bg-black">
           <p className="text-sm text-white/70">
-            <span className="text-yellow-500">cd</span> frontend
+            <span className="text-yellow-500">cd</span> package
           </p>
           <p className="text-sm text-white/70 mt-2">yarn install</p>
         </div>
@@ -59,7 +59,7 @@ export const QuickStart = () => {
         </p>
         <div className="py-4 px-3 rounded-md bg-black">
           <p className="text-sm text-white/70">
-            {"> blogforge@1.0.0 dev"}
+            {"> docstra@1.0.0 dev"}
           </p>
           <p className="text-sm text-white/70 mt-1">{"> next dev"}</p>
           <p className="text-sm text-white/70 mt-6">{"-Next.js 15.2.4"}</p>

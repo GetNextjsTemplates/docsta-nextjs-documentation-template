@@ -7,12 +7,11 @@ export const ColorConfiguration = () => {
                     For any change in colors : src/app/globals.css</p>
                 <div className="py-4 px-5 rounded-md bg-black mt-8">
                     <p className="text-sm text-white/70 flex flex-col gap-2">
-                        <span>--color-primary: #5D87FF;</span>
-                        <span>--color-gray: #00000014;</span>
-                        <span>--color-shineYellow: #ffb900;</span>
-                        <span>--color-navyGray : #2A3547;</span>
-                        <span>--color-surfaceDark: #1e232e;</span>
-                        <span>--color-baseInk: #171c2a;</span>
+                        <span>--color-primary: #0F7ED9;</span>
+                        <span>--color-secondary: #5E696E;</span>
+                        <span>--color-smokyBlack: #131516;</span>
+                        <span>--color-paleSlate : #F6F8F9;</span>
+                        <span>--color-charcoalDark: #2F3037;</span>
                     </p>
                 </div>
             </div>
@@ -21,8 +20,8 @@ export const ColorConfiguration = () => {
                     For change , go to : src/app/globals.css</p>
                 <div className="py-4 px-5 rounded-md bg-black mt-8">
                     <p className="text-sm text-white/70 flex flex-col gap-2">
-                        <span>--color-primary: #5D87FF;</span>
-                        <span>--color-gray: #00000014;</span>
+                        <span>--color-primary: #0F7ED9;</span>
+                        <span>--color-secondary: #5E696E;</span>
                     </p>
                 </div>
             </div>
