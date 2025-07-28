@@ -6,6 +6,7 @@ import './globals.css';
 import Header from './components/layout/header';
 import Footer from './components/layout/footer';
 import { ThemeProvider } from 'next-themes';
+import ScrollToTop from './components/ScrollToTop';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Header />
           {children}
           {!isDocsRoute && <Footer />}
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
