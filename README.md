@@ -1,4 +1,4 @@
-## Desgy Nextjs Landing Page Template
+## Docsta Nextjs Documentation Template
 
 🌏[Live Demo](https://docsta-nextjs.vercel.app/) |📥[Download Docsta Template](https://getnextjstemplates.com/products/docsta-nextjs-documentation-template) | 👉 [Discover Next.js Templates](https://getnextjstemplates.com/)
 
